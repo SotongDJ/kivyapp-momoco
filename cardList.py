@@ -9,8 +9,8 @@ from kivy.lang import Builder
 Builder.load_file('cakvListing.kv')
 
 import pprint
-import modDatabase
-import tool
+from core import modDatabase
+from core import tool
 
 class ListCard(GridLayout):
     frama = ObjectProperty()

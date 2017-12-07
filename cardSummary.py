@@ -12,8 +12,9 @@ from kivy.lang import Builder
 Builder.load_file('cakvSummarizing.kv')
 
 import pprint
-import modSearch, modDatabase
-import tool
+from core import modSearch
+from core import modDatabase
+from core import tool
 
 class SummaryCard(GridLayout):
     choseBox = ObjectProperty()

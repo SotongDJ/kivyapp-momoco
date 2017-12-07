@@ -8,8 +8,8 @@ from kivy.properties import ObjectProperty, StringProperty
 from kivy.lang import Builder
 Builder.load_file('cakvEditing.kv')
 
-import modDatabase
-import tool
+from core import modDatabase
+from core import tool
 
 class DataPart(GridLayout):
 
