@@ -13,6 +13,7 @@ database/
 database
 test/
 update/
+core/
 bin.tar.gz
 *.yaml
 
