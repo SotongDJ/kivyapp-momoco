@@ -27,70 +27,56 @@ class SummaryCard(GridLayout):
     utempoTitol = StringProperty()
     dtempoText = StringProperty()
     utempoText = StringProperty()
-    
-    cokasTitle = StringProperty()
-    keywoTitle = StringProperty()
-    cokasText = StringProperty()
-    keywoText = StringProperty()
+
+    takasTitle = StringProperty()
+    takasText = StringProperty()
+    kekasTitle = StringProperty()
+    kekasText = StringProperty()
+    karenTitol = StringProperty()
+    karenText = StringProperty()
 
     nammaTitol = StringProperty()
     klassTitol = StringProperty()
     shoopTitol = StringProperty()
     frommTitol = StringProperty()
-    karenTitol = StringProperty()
-    priceTitol = StringProperty()
     tooooTitol = StringProperty()
-    tkareTitol = StringProperty()
-    tpricTitol = StringProperty()
 
     nammaText = StringProperty()
     klassText = StringProperty()
     shoopText = StringProperty()
     frommText = StringProperty()
-    karenText = StringProperty()
-    priceText = StringProperty()
     tooooText = StringProperty()
-    tkareText = StringProperty()
-    tpricText = StringProperty()
 
     def __init__(self, **kwargs):
         super(SummaryCard, self).__init__(**kwargs)
-        self.sumitTitle = "SUMIT"
-        self.gleanTitle = "CLEAN"
-
         self.dtempoTitol = "Start: "
         self.utempoTitol = "End: "
+        self.kekasTitle = "Filter Class: "
+        self.takasTitle = "Target Class: "
+        self.karenTitol = "Currency: "
 
         self.nammaTitol = "namma"
         self.klassTitol = "klass"
         self.shoopTitol = "shoop"
         self.frommTitol = "fromm"
-        self.karenTitol = "karen"
-        self.priceTitol = "price"
         self.tooooTitol = "toooo"
-        self.tkareTitol = "tkare"
-        self.tpricTitol = "tpric"
 
-        self.cokasTitle = "Class: "
-        self.keywoTitle = "Keywo: "
-
+        self.sumitTitle = "SUMIT"
+        self.gleanTitle = "CLEAN"
         self.storeText = 'CHANGE -->'
 
         self.dicto={
             'dtempo' : self.dtempoText,
             'utempo' : self.utempoText,
-            'cokas' : self.cokasText,
-            'keywo' : self.keywoText,
+            'kekas' : self.kekasText,
+            'takas' : self.takasText,
+            'karen' : self.karenText,
 
             'namma' : self.nammaText,
             'klass' : self.klassText,
             'shoop' : self.shoopText,
             'fromm' : self.frommText,
-            'karen' : self.karenText,
-            'price' : self.priceText,
             'toooo' : self.tooooText,
-            'tkare' : self.tkareText,
-            'tpric' : self.tpricText,
         }
 
 class MomocoApp(App):
@@ -98,7 +84,8 @@ class MomocoApp(App):
     def build(self):
         dtempoText = tool.date(modde=6)
         utempoText = tool.date(modde=6)
-        return SummaryCard(dtempoText=dtempoText,utempoText=utempoText,usrdir=usrdir)
+        karenText = modDatabase.openSetting(usrdir).get('karen','MYR')
+        return SummaryCard(dtempoText=dtempoText,utempoText=utempoText,karenText=karenText,usrdir=usrdir)
 
 if __name__ == '__main__':
     usrdir = MomocoApp().user_data_dir
