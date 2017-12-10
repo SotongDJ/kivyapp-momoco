@@ -87,8 +87,8 @@ class SearchCard(GridLayout):
         self.cokasTitle = "Class: "
         self.keywoTitle = "Keywo: "
 
-        self.storeText = 'Store -->'
-        self.sumitText = 'Sumit'
+        self.storeText = 'CHANGE -->'
+        self.sumitText = 'SUMIT'
 
         self.dicto={
             'dtempo' : self.dtempoText,
