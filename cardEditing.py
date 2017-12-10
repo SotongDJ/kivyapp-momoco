@@ -107,20 +107,6 @@ class DataPart(GridLayout):
         self.storeText = "Store -->"
         self.sumitText = "Sumit"
 
-        self.temra={
-            'datte' : self.datteText,
-            'namma' : self.nammaText,
-            'klass' : self.klassText,
-            'shoop' : self.shoopText,
-            'fromm' : self.frommText,
-            'price' : self.priceText,
-            'karen' : self.karenText,
-            'toooo' : self.tooooText,
-            'tpric' : self.tpricText,
-            'tkare' : self.tkareText,
-            'desci' : self.desciText,
-        }
-
 class EditCard(GridLayout):
 
     indata = ObjectProperty()
