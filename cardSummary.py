@@ -27,6 +27,11 @@ class SummaryCard(GridLayout):
     utempoTitol = StringProperty()
     dtempoText = StringProperty()
     utempoText = StringProperty()
+    
+    cokasTitle = StringProperty()
+    keywoTitle = StringProperty()
+    cokasText = StringProperty()
+    keywoText = StringProperty()
 
     nammaTitol = StringProperty()
     klassTitol = StringProperty()
@@ -66,11 +71,17 @@ class SummaryCard(GridLayout):
         self.tkareTitol = "tkare"
         self.tpricTitol = "tpric"
 
+        self.cokasTitle = "Class: "
+        self.keywoTitle = "Keywo: "
+
         self.storeText = 'CHANGE -->'
 
         self.dicto={
             'dtempo' : self.dtempoText,
             'utempo' : self.utempoText,
+            'cokas' : self.cokasText,
+            'keywo' : self.keywoText,
+
             'namma' : self.nammaText,
             'klass' : self.klassText,
             'shoop' : self.shoopText,
