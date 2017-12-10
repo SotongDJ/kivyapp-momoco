@@ -20,32 +20,74 @@ class SummaryCard(GridLayout):
     choseBox = ObjectProperty()
     resutBox = ObjectProperty()
 
-    def tik(self,tar):
-        tar.canvas.clear()
+    sumitTitle = StringProperty()
+    gleanTitle = StringProperty()
 
-        lx = self.size[0]
-        ly = self.size[1]
+    dtempoTitol = StringProperty()
+    utempoTitol = StringProperty()
+    dtempoText = StringProperty()
+    utempoText = StringProperty()
 
-        #blue = InstructionGroup()
-        #blue.add(Color(0, 0, 1, 1))
-        #blue.add(Rectangle(pos=self.pos, size=(lx,ly*0.5)))
+    nammaTitol = StringProperty()
+    klassTitol = StringProperty()
+    shoopTitol = StringProperty()
+    frommTitol = StringProperty()
+    karenTitol = StringProperty()
+    priceTitol = StringProperty()
+    tooooTitol = StringProperty()
+    tkareTitol = StringProperty()
+    tpricTitol = StringProperty()
 
-        black = InstructionGroup()
-        black.add(Color(0, 0, 0, 1))
-        black.add(Line(circle=(lx*0.5, ly*0.5, 100), width=15, joint='round', close=True))
-
-        # Here, self should be a Widget or subclass
-        #[tar.canvas.add(group) for group in [blue, black]]
-        tar.canvas.add(black)
+    nammaText = StringProperty()
+    klassText = StringProperty()
+    shoopText = StringProperty()
+    frommText = StringProperty()
+    karenText = StringProperty()
+    priceText = StringProperty()
+    tooooText = StringProperty()
+    tkareText = StringProperty()
+    tpricText = StringProperty()
 
     def __init__(self, **kwargs):
         super(SummaryCard, self).__init__(**kwargs)
+        self.sumitTitle = "SUMIT"
+        self.gleanTitle = "CLEAN"
+
+        self.dtempoTitol = "Start: "
+        self.utempoTitol = "End: "
+
+        self.nammaTitol = "namma"
+        self.klassTitol = "klass"
+        self.shoopTitol = "shoop"
+        self.frommTitol = "fromm"
+        self.karenTitol = "karen"
+        self.priceTitol = "price"
+        self.tooooTitol = "toooo"
+        self.tkareTitol = "tkare"
+        self.tpricTitol = "tpric"
+
+        self.storeText = 'CHANGE -->'
+
+        self.dicto={
+            'dtempo' : self.dtempoText,
+            'utempo' : self.utempoText,
+            'namma' : self.nammaText,
+            'klass' : self.klassText,
+            'shoop' : self.shoopText,
+            'fromm' : self.frommText,
+            'karen' : self.karenText,
+            'price' : self.priceText,
+            'toooo' : self.tooooText,
+            'tkare' : self.tkareText,
+            'tpric' : self.tpricText,
+        }
 
 class MomocoApp(App):
 
     def build(self):
-        #return SummaryCard(usrdir=usrdir)
-        return SummaryCard()
+        dtempoText = tool.date(modde=6)
+        utempoText = tool.date(modde=6)
+        return SummaryCard(dtempoText=dtempoText,utempoText=utempoText,usrdir=usrdir)
 
 if __name__ == '__main__':
     usrdir = MomocoApp().user_data_dir
