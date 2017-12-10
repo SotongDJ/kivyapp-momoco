@@ -12,7 +12,7 @@ from kivy.lang import Builder
 Builder.load_file('cakvSummarizing.kv')
 
 import pprint
-from core import modSearch
+from core import modSummer
 from core import modDatabase
 from core import tool
 
