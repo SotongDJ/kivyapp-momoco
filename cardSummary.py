@@ -23,10 +23,10 @@ class SummaryCard(GridLayout):
     sumitTitle = StringProperty()
     gleanTitle = StringProperty()
 
-    dtempoTitol = StringProperty()
-    utempoTitol = StringProperty()
-    dtempoText = StringProperty()
-    utempoText = StringProperty()
+    btempoTitol = StringProperty()
+    ftempoTitol = StringProperty()
+    btempoText = StringProperty()
+    ftempoText = StringProperty()
 
     takasTitle = StringProperty()
     takasText = StringProperty()
@@ -49,8 +49,8 @@ class SummaryCard(GridLayout):
 
     def __init__(self, **kwargs):
         super(SummaryCard, self).__init__(**kwargs)
-        self.dtempoTitol = "Start: "
-        self.utempoTitol = "End: "
+        self.btempoTitol = "Start: "
+        self.ftempoTitol = "End: "
         self.kekasTitle = "Filter Class: "
         self.takasTitle = "Target Class: "
         self.karenTitol = "Currency: "
@@ -66,8 +66,8 @@ class SummaryCard(GridLayout):
         self.storeText = 'CHANGE -->'
 
         self.dicto={
-            'dtempo' : self.dtempoText,
-            'utempo' : self.utempoText,
+            'btempo' : self.btempoText,
+            'ftempo' : self.ftempoText,
             'kekas' : self.kekasText,
             'takas' : self.takasText,
             'karen' : self.karenText,
@@ -82,10 +82,10 @@ class SummaryCard(GridLayout):
 class MomocoApp(App):
 
     def build(self):
-        dtempoText = tool.date(modde=6)
-        utempoText = tool.date(modde=6)
+        btempoText = tool.date(modde=6)
+        ftempoText = tool.date(modde=6)
         karenText = modDatabase.openSetting(usrdir).get('karen','MYR')
-        return SummaryCard(dtempoText=dtempoText,utempoText=utempoText,karenText=karenText,usrdir=usrdir)
+        return SummaryCard(btempoText=btempoText,ftempoText=ftempoText,karenText=karenText,usrdir=usrdir)
 
 if __name__ == '__main__':
     usrdir = MomocoApp().user_data_dir

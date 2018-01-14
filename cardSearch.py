@@ -21,21 +21,21 @@ class Tesol(Label):
 
 class SearchCard(GridLayout):
 
-    dtempo = ObjectProperty()
-    utempo = ObjectProperty()
+    btempo = ObjectProperty()
+    ftempo = ObjectProperty()
     cokas = ObjectProperty()
     keywo = ObjectProperty()
 
     tempor = ObjectProperty()
     trasa = ObjectProperty()
 
-    dtempoTitle = StringProperty()
-    utempoTitle = StringProperty()
+    btempoTitle = StringProperty()
+    ftempoTitle = StringProperty()
     cokasTitle = StringProperty()
     keywoTitle = StringProperty()
 
-    dtempoText = StringProperty()
-    utempoText = StringProperty()
+    btempoText = StringProperty()
+    ftempoText = StringProperty()
     cokasText = StringProperty()
     keywoText = StringProperty()
 
@@ -82,8 +82,8 @@ class SearchCard(GridLayout):
 
     def __init__(self, **kwargs):
         super(SearchCard, self).__init__(**kwargs)
-        self.dtempoTitle = "Start: "
-        self.utempoTitle = "End: "
+        self.btempoTitle = "Start: "
+        self.ftempoTitle = "End: "
         self.cokasTitle = "Class: "
         self.keywoTitle = "Keywo: "
 
@@ -91,8 +91,8 @@ class SearchCard(GridLayout):
         self.sumitText = 'SUMIT'
 
         self.dicto={
-            'dtempo' : self.dtempoText,
-            'utempo' : self.utempoText,
+            'btempo' : self.btempoText,
+            'ftempo' : self.ftempoText,
             'cokas' : self.cokasText,
             'keywo' : self.keywoText,
         }
@@ -100,9 +100,9 @@ class SearchCard(GridLayout):
 class MomocoApp(App):
 
     def build(self):
-        dtempoText = tool.date(modde=6)
-        utempoText = tool.date(modde=6)
-        return SearchCard(dtempoText=dtempoText,utempoText=utempoText,usrdir=usrdir)
+        btempoText = tool.date(modde=6)
+        ftempoText = tool.date(modde=6)
+        return SearchCard(btempoText=btempoText,ftempoText=ftempoText,usrdir=usrdir)
 
 if __name__ == '__main__':
     usrdir = MomocoApp().user_data_dir

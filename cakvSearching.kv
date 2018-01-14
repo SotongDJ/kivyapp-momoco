@@ -32,36 +32,36 @@
         GridLayout:
             cols:4
             Label:
-                text: root.dtempoTitle
+                text: root.btempoTitle
             TextInput:
-                id: dtempo
-                text: root.dtempoText
+                id: btempo
+                text: root.btempoText
                 multiline: False
                 write_tab: False
-                on_text_validate: root.stored(tar=dtempoResut,fro=dtempo.text,too=root.dtempoText,tan='dtempo',tah=tempor)
+                on_text_validate: root.stored(tar=btempoResut,fro=btempo.text,too=root.btempoText,tan='btempo',tah=tempor)
             Button:
                 text: root.storeText
-                on_press: root.stored(tar=dtempoResut,fro=dtempo.text,too=root.dtempoText,tan='dtempo',tah=tempor)
+                on_press: root.stored(tar=btempoResut,fro=btempo.text,too=root.btempoText,tan='btempo',tah=tempor)
             Label:
-                id: dtempoResut
-                text: root.dtempoText
+                id: btempoResut
+                text: root.btempoText
 
         GridLayout:
             cols:4
             Label:
-                text: root.utempoTitle
+                text: root.ftempoTitle
             TextInput:
-                id: utempo
-                text: root.utempoText
+                id: ftempo
+                text: root.ftempoText
                 multiline: False
                 write_tab: False
-                on_text_validate: root.stored(tar=utempoResut,fro=utempo.text,too=root.utempoText,tan='utempo',tah=tempor)
+                on_text_validate: root.stored(tar=ftempoResut,fro=ftempo.text,too=root.ftempoText,tan='ftempo',tah=tempor)
             Button:
                 text: root.storeText
-                on_press: root.stored(tar=utempoResut,fro=utempo.text,too=root.utempoText,tan='utempo',tah=tempor)
+                on_press: root.stored(tar=ftempoResut,fro=ftempo.text,too=root.ftempoText,tan='ftempo',tah=tempor)
             Label:
-                id: utempoResut
-                text: root.utempoText
+                id: ftempoResut
+                text: root.ftempoText
 
         GridLayout:
             cols:4
