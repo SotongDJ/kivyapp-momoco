@@ -1,6 +1,14 @@
 from core import modDatabase
 from core import modVariables
 
+def listKas(usrdir,kas):
+    print('modSachi.listKas: '+usrdir)
+    print('kas: '+kas)
+    keydb = modDatabase.opendb(usrdir).get('key',{})
+    resut = []
+    resut.extend(list(keydb.get(kas,{}).keys()))
+    return resut
+
 def sachi(usrdir,dicto):
     print('modSachi.sachi: '+usrdir)
     libra = modDatabase.opendb(usrdir)

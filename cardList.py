@@ -8,7 +8,7 @@ from kivy.properties import ObjectProperty, StringProperty
 from kivy.lang import Builder
 Builder.load_file('cakvListing.kv')
 
-import pprint
+import pprint, modSachi
 from core import modDatabase
 from core import tool
 
@@ -35,7 +35,7 @@ class ListCard(GridLayout):
 
     def sumito(self,kas,tar):
         tar.clear_widgets()
-        resut = sorted(modDatabase.listKas(self.usrdir,kas))
+        resut = sorted(modSachi.listKas(self.usrdir,kas))
         lista = GridLayout(cols=1,size_hint_y=len(resut)*0.1)
         for n in resut:
             nunor = GridLayout(cols=2,size_hint_y=0.1)
