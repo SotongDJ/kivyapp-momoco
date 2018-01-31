@@ -9,7 +9,7 @@ from kivy.lang import Builder
 Builder.load_file('cakvSearching.kv')
 
 import pprint
-from core import modSearch
+from core import modSachi
 from core import modDatabase
 from core import tool
 
@@ -55,8 +55,8 @@ class SearchCard(GridLayout):
 
     def sumited(self,tar):
         modDatabase.refesdb(usrdir=self.usrdir)
-        tempa = modSearch.sachi(usrdir=self.usrdir,dicto=self.dicto)
-        self.resut = modSearch.listSachi(usrdir,tempa,lingua='hanT')
+        tempa = modSachi.sachi(usrdir=self.usrdir,dicto=self.dicto)
+        self.resut = modSachi.listSachi(usrdir,tempa,lingua='hanT')
         tar.clear_widgets()
 
         nummo = 0
