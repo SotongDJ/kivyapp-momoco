@@ -9,7 +9,7 @@ from kivy.lang import Builder
 Builder.load_file('cakvSearching.kv')
 
 import pprint
-from core import modSachi
+import modSachi
 from core import modDatabase
 from core import tool
 
